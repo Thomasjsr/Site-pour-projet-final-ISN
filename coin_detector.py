@@ -47,10 +47,8 @@ for features, label in training_data:
 
 x_test = np.array(x_test).reshape(-1, training_data[0][0].shape[0], training_data[0][0].shape[0], 1)
 
-from scipy.spatial import distance
-
 def euc(a, b):
-    return distance.euclidean(a, b)
+    return np.linalg.norm(np.array(a)-np.array(b))
 
 
 class KNN():
